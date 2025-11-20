@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+mysql-connector-python
+pydantic
+python-dotenv
+openai
+
+
+# 일괄 설치
+# pip install -r requirements.txt
