@@ -1,7 +1,8 @@
 from fastapi import FastAPI
-from . import models
-from .database import engine
-from .routers import review, dashboard
+from fastapi.middleware.cors import CORSMiddleware
+import models
+from database import engine
+from routers import review, dashboard
 
 # MySQL DB에 테이블이 없다면 자동으로 생성
 models.Base.metadata.create_all(bind=engine)
@@ -9,6 +10,15 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="RookieRoute",
     description="OpenAI와 FastAPI, MySQL을 활용한 코드 리뷰 및 약점 분석 프로젝트"
+)
+
+# CORS 설정 - 프론트엔드와 통신 허용
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://localhost:5174"],  # Vite 개발 서버
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # 라우터 등록
