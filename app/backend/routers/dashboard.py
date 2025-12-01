@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from sqlalchemy import func # SQL의 COUNT, GROUP BY 함수
-from .. import database, models, schemas
+import database, models, schemas
 
 router = APIRouter(
     prefix="/dashboard",
