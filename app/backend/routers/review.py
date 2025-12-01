@@ -1,8 +1,12 @@
 import openai
 import json
+import os
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from .. import schemas, database, models
+import schemas, database, models
+
+# OpenAI API 키 설정
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 router = APIRouter(
     prefix="/review",
