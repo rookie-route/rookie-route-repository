@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import models
 from database import engine
-from routers import review, dashboard
+from routers import review, dashboard, auth
 
 # MySQL DB에 테이블이 없다면 자동으로 생성
 models.Base.metadata.create_all(bind=engine)
@@ -22,8 +22,10 @@ app.add_middleware(
 )
 
 # 라우터 등록
+app.include_router(auth.router)
 app.include_router(review.router)
 app.include_router(dashboard.router)
+
 
 @app.get("/", tags=["Root"])
 def read_root():

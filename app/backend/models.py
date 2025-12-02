@@ -33,3 +33,14 @@ class Weakness(Base):
     
     # Weakness가 Submission에 연결
     submission = relationship("Submission", back_populates="weaknesses")
+
+
+
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String(50), unique=True, index=True) # 로그인 ID
+    email = Column(String(100), unique=True, index=True)
+    hashed_password = Column(String(255)) # 암호화된 비밀번호 저장
+    is_active = Column(Integer, default=1) # 1: 활성, 0: 비활성
