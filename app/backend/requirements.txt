@@ -6,6 +6,10 @@ pydantic
 python-dotenv
 openai
 
+#jwt-auth
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
 
 # 일괄 설치
 # pip install -r requirements.txt

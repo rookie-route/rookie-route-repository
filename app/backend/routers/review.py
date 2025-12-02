@@ -4,6 +4,7 @@ import os
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 import schemas, database, models
+from dependencies import get_current_user
 
 # OpenAI API 키 설정
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -49,7 +50,16 @@ def call_openai_analyzer(user_code: str) -> dict:
 
 
 @router.post("/analyze", response_model=schemas.AnalysisResponse)
-def analyze_code(request: schemas.CodeRequest, db: Session = Depends(database.get_db)):
+def analyze_code(
+    request: schemas.CodeRequest, 
+    db: Session = Depends(database.get_db), 
+    current_user: models.User = Depends(get_current_user) # 보안 검사
+):
+
+    # get_current_user 의존성을 추가하여 로그인한 사람만 접근 가능하게 함.
+    # 토큰에서 증명된 진짜 ID(current_user.username)를 사용
+    real_user_id = current_user.username
+
     """
     1. 코드를 받아 AI에게 분석 요청
     2. 결과를 DB에 저장
@@ -61,7 +71,7 @@ def analyze_code(request: schemas.CodeRequest, db: Session = Depends(database.ge
     
     # 2. Submission (제출물) 저장
     new_submission = models.Submission(
-        user_id=request.user_id,
+        user_id=real_user_id,
         code_snippet=request.code,
         summary=ai_result.get("summary", "No summary.")
     )
@@ -74,7 +84,7 @@ def analyze_code(request: schemas.CodeRequest, db: Session = Depends(database.ge
     for item in ai_result.get("weaknesses", []):
         new_weakness = models.Weakness(
             submission_id=new_submission.id,
-            user_id=request.user_id,
+            user_id=real_user_id,
             type=item.get("type"),
             line=item.get("line"),
             explanation=item.get("explanation")
