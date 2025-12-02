@@ -4,6 +4,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import AnalysisResult from "../components/AnalysisResult";
 import HistoryPanel from "../components/HistoryPanel";
 import CodeExamples from "../components/CodeExamples";
+import { API_URL } from "../config/api";
 
 const Home = () => {
     const [code, setCode] = useState("");
@@ -59,7 +60,7 @@ const Home = () => {
         setResult(null);
 
         try {
-            const res = await fetch("http://localhost:8000/review/analyze", {
+            const res = await fetch(`${API_URL}/review/analyze`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

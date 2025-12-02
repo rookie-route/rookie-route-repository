@@ -4,6 +4,7 @@ import PatternTrendIndicator from "../components/PatternTrendIndicator";
 import ErrorTypeChart from "../components/ErrorTypeChart";
 import ImprovementTrendChart from "../components/ImprovementTrendChart";
 import StatisticsCard from "../components/StatisticsCard";
+import { API_URL } from "../config/api";
 
 const AnalyzePage = () => {
     const [history, setHistory] = useState([]);
@@ -26,7 +27,7 @@ const AnalyzePage = () => {
         const fetchDashboardData = async () => {
             try {
                 setLoading(true);
-                const res = await fetch(`http://localhost:8000/dashboard/stats/${userId}`);
+                const res = await fetch(`${API_URL}/dashboard/stats/${userId}`);
 
                 if (res.ok) {
                     const data = await res.json();
