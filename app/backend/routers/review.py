@@ -6,16 +6,17 @@ from sqlalchemy.orm import Session
 import schemas, database, models
 from dependencies import get_current_user
 
-# OpenAI API 키 설정
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
+# 수정 1: 비동기 클라이언트를 위한 import 추가
+from openai import **AsyncOpenAI** # 수정 2: 클라이언트 인스턴스를 AsyncOpenAI로 변경
+aclient = **AsyncOpenAI**(api_key=os.getenv("OPENAI_API_KEY"))
 router = APIRouter(
     prefix="/review",
     tags=["Code Review"]
 )
 
 # AI 호출 함수 (AI가 JSON을 만들도록 강제)
-def call_openai_analyzer(user_code: str) -> dict:
+# 수정 3: 함수 정의를 async def로 변경
+async def call_openai_analyzer(user_code: str) -> dict:
     # 우리가 통계낼 표준 카테고리
     CATEGORIES = [
         "SyntaxError", "IndentationError", "NamingConvention", 
@@ -32,7 +33,8 @@ def call_openai_analyzer(user_code: str) -> dict:
     """
     
     try:
-        response = openai.chat.completions.create(
+        # 수정 4: aclient 사용 및 await 키워드 추가
+        response = **await aclient**.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
@@ -49,16 +51,25 @@ def call_openai_analyzer(user_code: str) -> dict:
         raise HTTPException(status_code=500, detail="AI analysis failed.")
 
 
+# 수정 5: 라우터 함수 정의를 async def로 변경
 @router.post("/analyze", response_model=schemas.AnalysisResponse)
-def analyze_code(
+async def analyze_code( # async 추가
     request: schemas.CodeRequest, 
     db: Session = Depends(database.get_db), 
-    current_user: models.User = Depends(get_current_user) # 보안 검사
+    current_user: models.User = Depends(get_current_user)
 ):
 
     # get_current_user 의존성을 추가하여 로그인한 사람만 접근 가능하게 함.
     # 토큰에서 증명된 진짜 ID(current_user.username)를 사용
     real_user_id = current_user.username
+
+    # 추가 1: 입력 코드 길이 제한 (비용/안전성 확보)
+    MAX_CODE_LENGTH = 15000 # 15,000자로 임의 설정
+    if len(request.code) > MAX_CODE_LENGTH:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, 
+            detail=f"코드가 너무 깁니다. ({MAX_CODE_LENGTH}자 이내로 제출해주세요.)"
+        )
 
     """
     1. 코드를 받아 AI에게 분석 요청
@@ -67,7 +78,8 @@ def analyze_code(
     """
     
     # 1. AI 호출
-    ai_result = call_openai_analyzer(request.code)
+   # 수정 6: await 키워드 사용
+    ai_result = **await call_openai_analyzer(request.code)**
     
     # 2. Submission (제출물) 저장
     new_submission = models.Submission(
