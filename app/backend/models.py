@@ -29,7 +29,7 @@ class Weakness(Base):
     
     type = Column(String(100), index=True) # "LogicError", "SyntaxError" 등
     line = Column(Integer)
-    explanation = Column(String(2000))
+    explanation = Column(**Text**) # 이 부분을 String(2000)에서 Text로 변경
     
     # Weakness가 Submission에 연결
     submission = relationship("Submission", back_populates="weaknesses")
