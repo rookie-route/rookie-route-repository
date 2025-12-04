@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import CodeEditor from "../components/CodeEditor";
 import LoadingSpinner from "../components/LoadingSpinner";
 import AnalysisResult from "../components/AnalysisResult";
@@ -12,17 +13,7 @@ const Home = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [history, setHistory] = useState([]);
-    const [userId, setUserId] = useState("");
-
-    // Load or generate user ID
-    useEffect(() => {
-        let storedUserId = localStorage.getItem('rookie_route_user_id');
-        if (!storedUserId) {
-            storedUserId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-            localStorage.setItem('rookie_route_user_id', storedUserId);
-        }
-        setUserId(storedUserId);
-    }, []);
+    const navigate = useNavigate();
 
     // Load history from localStorage on mount
     useEffect(() => {
@@ -49,8 +40,11 @@ const Home = () => {
             return;
         }
 
-        if (!userId) {
-            setError("User ID not initialized. Please refresh the page.");
+        // JWT 토큰 확인
+        const token = localStorage.getItem('access_token');
+        if (!token) {
+            setError("로그인이 필요합니다.");
+            setTimeout(() => navigate('/login'), 2000);
             return;
         }
 
@@ -61,15 +55,27 @@ const Home = () => {
         try {
             const res = await fetch("http://localhost:8000/review/analyze", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
                 body: JSON.stringify({
-                    user_id: userId,
                     code: code
                 })
             });
 
             if (!res.ok) {
                 const errorData = await res.json().catch(() => ({}));
+
+                // 401 Unauthorized - 토큰이 유효하지 않음
+                if (res.status === 401) {
+                    localStorage.removeItem('access_token');
+                    localStorage.removeItem('username');
+                    setError("로그인이 만료되었습니다. 다시 로그인해주세요.");
+                    setTimeout(() => navigate('/login'), 2000);
+                    return;
+                }
+
                 throw new Error(errorData.detail || `Server error: ${res.status}`);
             }
 
@@ -128,14 +134,19 @@ const Home = () => {
         setError(null);
     };
 
+    // 로그인 여부 확인
+    const isLoggedIn = !!localStorage.getItem('access_token');
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-200">
-            {/* History Panel */}
-            <HistoryPanel
-                history={history}
-                onLoadHistory={handleLoadHistory}
-                onClearHistory={handleClearHistory}
-            />
+            {/* History Panel - 로그인한 경우만 표시 */}
+            {isLoggedIn && (
+                <HistoryPanel
+                    history={history}
+                    onLoadHistory={handleLoadHistory}
+                    onClearHistory={handleClearHistory}
+                />
+            )}
 
             {/* Main Content */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
