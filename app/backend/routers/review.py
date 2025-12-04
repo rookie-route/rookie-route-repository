@@ -16,7 +16,7 @@ router = APIRouter(
 
 # AI 호출 함수 (AI가 JSON을 만들도록 강제)
 # 수정 3: 함수 정의를 async def로 변경
-async def call_openai_analyzer(user_code: str) -> dict:
+async def call_openai_analyzer(user_code: str, language: str) -> dict:
     # 우리가 통계낼 표준 카테고리
     CATEGORIES = [
         "SyntaxError", "IndentationError", "NamingConvention", 
@@ -24,12 +24,13 @@ async def call_openai_analyzer(user_code: str) -> dict:
     ]
     
     system_prompt = f"""
-    You are an expert code reviewer AI. Analyze the user's code.
-    Each weakness must be categorized into one of these types: {CATEGORIES}.
-    Your response MUST be a single, valid JSON object with two keys: "summary" and "weaknesses".
-    "summary" should be a brief, one-sentence review in Korean.
-    "weaknesses" should be an array of objects. Each object must have "type", "line", and "explanation".
-    If there are no weaknesses, return an empty "weaknesses" array.
+    You are a strict code reviewer specializing in '{language}'.
+    The user has submitted code that MUST be written in '{language}'.
+    
+    1. If the code is written in a different language (e.g., C code submitted as Python), report a "SyntaxError" immediately.
+    2. Analyze the code strictly according to '{language}' syntax and conventions.
+    3. Each weakness must be categorized into: {CATEGORIES}.
+    4. Response MUST be a valid JSON with "summary" (Korean) and "weaknesses" (list).
     """
     
     try:
@@ -79,12 +80,13 @@ async def analyze_code( # async 추가
     
     # 1. AI 호출
    # 수정 6: await 키워드 사용
-    ai_result = await call_openai_analyzer(request.code)
+    ai_result = await call_openai_analyzer(request.code, request.language)
     
     # 2. Submission (제출물) 저장
     new_submission = models.Submission(
         user_id=real_user_id,
         code_snippet=request.code,
+        language=request.language,
         summary=ai_result.get("summary", "No summary.")
     )
     db.add(new_submission)
@@ -97,12 +99,18 @@ async def analyze_code( # async 추가
         new_weakness = models.Weakness(
             submission_id=new_submission.id,
             user_id=real_user_id,
-            type=item.get("type"),
-            line=item.get("line"),
-            explanation=item.get("explanation")
+            type=item.get("type", "Unknown"),
+            line=item.get("line", 0),
+            explanation=item.get("explanation", "AI가 상세 설명을 제공하지 않았습니다.")
         )
         db.add(new_weakness)
-        response_weaknesses.append(item) # 프론트에 보낼 리스트에도 추가
+        #프론트에 보낼 item
+        safe_item = {
+            "type": item.get("type", "Unknown"),
+            "line": item.get("line", 0),
+            "explanation": item.get("explanation", "AI가 상세 설명을 제공하지 않았습니다.")
+        }
+        response_weaknesses.append(safe_item)
     
     db.commit()
     

@@ -11,6 +11,7 @@ class Submission(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(String(50), index=True, nullable=False)
     code_snippet = Column(Text, nullable=False) # 긴 코드 저장을 위해 Text
+    language = Column(String(20), nullable=False)
     summary = Column(String(2000)) # AI의 한 줄 요약
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     

@@ -60,7 +60,8 @@ const Home = () => {
                     "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify({
-                    code: code
+                    code: code,
+                    language: language
                 })
             });
 
