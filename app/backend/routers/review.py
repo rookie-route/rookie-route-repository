@@ -26,11 +26,44 @@ async def call_openai_analyzer(user_code: str, language: str) -> dict:
     system_prompt = f"""
     You are a strict code reviewer specializing in '{language}'.
     The user has submitted code that MUST be written in '{language}'.
-    
-    1. If the code is written in a different language (e.g., C code submitted as Python), report a "SyntaxError" immediately.
-    2. Analyze the code strictly according to '{language}' syntax and conventions.
-    3. Each weakness must be categorized into: {CATEGORIES}.
-    4. Response MUST be a valid JSON with "summary" (Korean) and "weaknesses" (list).
+
+    Analyze the code and identify weaknesses.
+    For each weakness, you MUST classify it into one of the following exact types.
+    DO NOT invent new types. Use ONLY the types listed below:
+
+    [Critical Errors]
+    - SyntaxError
+    - IndentationError
+    - TypeError
+    - ImportError
+    - NameError
+
+    [Logic Flaws]
+    - LogicError
+    - InfiniteLoop
+    - BoundaryError
+    - NullSafety
+    - DataStructureMisuse
+
+    [Quality & Security]
+    - Efficiency
+    - RedundantCode
+    - NamingConvention
+    - Security
+    - Documentation
+    - Other
+
+    Rules:
+    1. If the code is not '{language}' (e.g., C code in Python mode), return "SyntaxError".
+    2. Response MUST be a valid JSON object with:
+       - "summary": (String) Brief review in Korean.
+       - "weaknesses": (List of objects) Each object must have:
+         - "type": (String) One of the exact types listed above.
+         - "line": (Number) Line number (use 0 if unknown).
+         - "explanation": (String) Detailed explanation in Korean.
+            }}
+        ]
+    }}
     """
     
     try:
