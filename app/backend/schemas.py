@@ -1,16 +1,16 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 
 # --- 공통 ---
 class WeaknessDetail(BaseModel):
     type: str
-    line: int
+    line: Optional[int] = None
     explanation: str
     
 # --- Review ---
 class CodeRequest(BaseModel):
-    user_id: str
     code: str
+    language: str
 
 class AnalysisResponse(BaseModel):
     submission_id: int
