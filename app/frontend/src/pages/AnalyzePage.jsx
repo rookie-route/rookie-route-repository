@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ErrorPatternCard from "../components/ErrorPatternCard";
-import PatternTrendIndicator from "../components/PatternTrendIndicator";
 import ErrorTypeChart from "../components/ErrorTypeChart";
-import ImprovementTrendChart from "../components/ImprovementTrendChart";
 import StatisticsCard from "../components/StatisticsCard";
 
 const AnalyzePage = () => {
@@ -10,12 +9,19 @@ const AnalyzePage = () => {
     const [dashboardData, setDashboardData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [userId, setUserId] = useState("");
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    // Load user ID
+    // Check login status
     useEffect(() => {
-        const storedUserId = localStorage.getItem('rookie_route_user_id');
-        if (storedUserId) {
-            setUserId(storedUserId);
+        const token = localStorage.getItem('access_token');
+        const storedUsername = localStorage.getItem('username');
+
+        if (token && storedUsername) {
+            setIsLoggedIn(true);
+            setUserId(storedUsername);
+        } else {
+            setIsLoggedIn(false);
+            setLoading(false);
         }
     }, []);
 
@@ -85,21 +91,45 @@ const AnalyzePage = () => {
         })
         : [];
 
-    // Calculate trend data from history (임시로 계산)
-    const trendData = history.length > 0
-        ? history.slice(0, 10).reverse().map((item, index) => ({
-            date: `${index + 1}차`,
-            score: 50 + Math.random() * 50 // 임시 점수
-        }))
-        : [];
-
-    const avgScore = trendData.length > 0
-        ? (trendData.reduce((sum, item) => sum + item.score, 0) / trendData.length).toFixed(1)
-        : 0;
-    const bestScore = trendData.length > 0
-        ? Math.max(...trendData.map(item => item.score))
-        : 0;
+    // 가장 흔한 오류 패턴
     const mostCommonError = errorPatterns.length > 0 ? errorPatterns[0].pattern : "없음";
+
+    // 로그인하지 않은 경우 로그인 유도 화면
+    if (!isLoggedIn) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center px-4">
+                <div className="max-w-md w-full text-center">
+                    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+                        <div className="mb-6">
+                            <svg className="w-20 h-20 mx-auto text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                            로그인이 필요합니다
+                        </h1>
+                        <p className="text-gray-600 dark:text-gray-400 mb-8">
+                            코드 분석 리포트를 확인하려면 로그인해주세요.
+                        </p>
+                        <div className="space-y-3">
+                            <Link
+                                to="/login"
+                                className="block w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+                            >
+                                로그인하기
+                            </Link>
+                            <Link
+                                to="/signup"
+                                className="block w-full px-6 py-3 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                            >
+                                회원가입하기
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-200">
@@ -116,12 +146,9 @@ const AnalyzePage = () => {
 
                 {/* 3번 기능: Personal Error Pattern Analysis */}
                 <div className="mb-16">
-                    <div className="flex items-center justify-between mb-6">
-                        <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                            개인 오류 패턴 분석
-                        </h2>
-                        <PatternTrendIndicator trend="improving" />
-                    </div>
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                        개인 오류 패턴 분석
+                    </h2>
 
                     {loading ? (
                         <div className="text-center py-8">
@@ -158,7 +185,7 @@ const AnalyzePage = () => {
                     </h2>
 
                     {/* Statistics Cards */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                         <StatisticsCard
                             icon={
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,28 +196,6 @@ const AnalyzePage = () => {
                             value={totalAnalyses}
                             subtitle="코드 분석 완료"
                             color="blue"
-                        />
-                        <StatisticsCard
-                            icon={
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-                                </svg>
-                            }
-                            title="평균 점수"
-                            value={avgScore}
-                            subtitle="전체 평균 품질 점수"
-                            color="green"
-                        />
-                        <StatisticsCard
-                            icon={
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                                </svg>
-                            }
-                            title="최고 점수"
-                            value={bestScore}
-                            subtitle="역대 최고 기록"
-                            color="purple"
                         />
                         <StatisticsCard
                             icon={
@@ -206,43 +211,22 @@ const AnalyzePage = () => {
                     </div>
 
                     {/* Charts */}
-                    {errorTypeData.length > 0 || trendData.length > 0 ? (
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            {errorTypeData.length > 0 ? (
-                                <ErrorTypeChart data={errorTypeData} />
-                            ) : (
-                                <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6">
-                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">오류 유형별 분포</h3>
-                                    <div className="text-center py-12">
-                                        <p className="text-gray-600 dark:text-gray-400">데이터가 없습니다.</p>
-                                    </div>
-                                </div>
-                            )}
-                            {trendData.length > 0 ? (
-                                <ImprovementTrendChart data={trendData} />
-                            ) : (
-                                <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-6">
-                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">개선 추세</h3>
-                                    <div className="text-center py-12">
-                                        <p className="text-gray-600 dark:text-gray-400">데이터가 없습니다.</p>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
+                    {errorTypeData.length > 0 ? (
+                        <ErrorTypeChart data={errorTypeData} />
                     ) : (
                         <div className="text-center py-12 bg-white dark:bg-gray-800 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-700">
                             <svg className="w-16 h-16 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
-                            <p className="mt-4 text-gray-600 dark:text-gray-400">아직 차트 데이터가 없습니다.</p>
-                            <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">코드를 분석하면 통계가 표시됩니다.</p>
+                            <p className="mt-4 text-gray-600 dark:text-gray-400">아직 분석 데이터가 없습니다.</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">코드를 분석하면 오류 통계가 표시됩니다.</p>
                         </div>
                     )}
                 </div>
 
                 {/* Footer */}
                 <footer className="mt-16 text-center text-gray-600 dark:text-gray-400 text-sm">
-                    <p>데이터는 로컬 스토리지에 저장되며, 실시간으로 업데이트됩니다.</p>
+                    <p>데이터는 서버에 안전하게 저장되며, 실시간으로 업데이트됩니다.</p>
                 </footer>
             </div>
         </div>
