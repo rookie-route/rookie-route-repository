@@ -1,14 +1,14 @@
 import openai
 import json
 import os
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, status # status 추가가
 from sqlalchemy.orm import Session
 import schemas, database, models
 from dependencies import get_current_user
 
 # 수정 1: 비동기 클라이언트를 위한 import 추가
-from openai import **AsyncOpenAI** # 수정 2: 클라이언트 인스턴스를 AsyncOpenAI로 변경
-aclient = **AsyncOpenAI**(api_key=os.getenv("OPENAI_API_KEY"))
+from openai import AsyncOpenAI # 수정 2: 클라이언트 인스턴스를 AsyncOpenAI로 변경
+aclient = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 router = APIRouter(
     prefix="/review",
     tags=["Code Review"]
@@ -34,7 +34,7 @@ async def call_openai_analyzer(user_code: str) -> dict:
     
     try:
         # 수정 4: aclient 사용 및 await 키워드 추가
-        response = **await aclient**.chat.completions.create(
+        response = await aclient.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
@@ -79,7 +79,7 @@ async def analyze_code( # async 추가
     
     # 1. AI 호출
    # 수정 6: await 키워드 사용
-    ai_result = **await call_openai_analyzer(request.code)**
+    ai_result = await call_openai_analyzer(request.code)
     
     # 2. Submission (제출물) 저장
     new_submission = models.Submission(
