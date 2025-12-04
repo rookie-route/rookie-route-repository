@@ -6,6 +6,7 @@ const CodeEditor = ({ code, setCode, language, setLanguage, disabled = false }) 
         { value: "javascript", label: "JavaScript" },
         { value: "python", label: "Python" },
         { value: "java", label: "Java" },
+        { value: "c", label: "C" },
         { value: "cpp", label: "C++" },
         { value: "csharp", label: "C#" },
         { value: "typescript", label: "TypeScript" },
