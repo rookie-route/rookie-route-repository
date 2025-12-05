@@ -2,6 +2,10 @@
 
 Thank you for your contribution to the project name. Your help is very important in advancing this project.
 
+## Community Code of Conduct
+Our project is committed to ensuring a safe and welcoming environment for all participants to contribute.
+All contributors must comply with the Code of Conduct outlined in **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)**. Violations should be reported according to the procedures specified in that document.
+
 ## How to contribute
 
 There are several ways you can contribute to the project.
