@@ -1,6 +1,4 @@
-# About the Project
-
-## 1. Vision and Mission
+<img width="1824" height="820" alt="image" src="https://github.com/user-attachments/assets/9bd78f48-4362-43cf-9043-88599baa8730" />## 1. Vision and Mission
 
 * **Project Name**: Rookie Route
 * **Mission**: To build an open-source, community-driven platform that guides new developers(Rookies) through their career paths and accelerates their professional growth.
@@ -27,4 +25,4 @@
 
 We believe in growth through collaboration. Find out how you can contribute or connect with us:
 * **Contribution Guide**: See [CONTRIBUTING.md](CONTRIBUTING.md)
-* **Community Channels**: [Coming Soon! 서버가 개설되는 대로 여기에 초대 링크가 게시될 예정입니다.], [Coming Soon! 공식 공지 채널 개설 시 여기에 주소가 게시될 예정입니다.]
+* **Community Channels**: https://discord.gg/qzEBPv6bAV
