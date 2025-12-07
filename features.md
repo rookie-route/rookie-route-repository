@@ -81,7 +81,8 @@ Small, manageable tasks that allow Rookies to contribute to real projects and bu
 ### Instant Feedback on Your Code
 
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="https://github.com/user-attachments/assets/f44ac8a4-52cf-47b4-bb65-9e6fc782ed10" alt="AI Code Analysis" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <img src="https://github.com/user-attachments/assets/f8b5d508-e70d-489b-acf7-1d004b156782" alt="AI Code Analysis - Analyze Page" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">AI-Powered Code Analysis Interface</p>
 </div>
 
 Leveraging OpenAI's advanced models to provide personalized code reviews and improvement suggestions.
@@ -112,7 +113,8 @@ Leveraging OpenAI's advanced models to provide personalized code reviews and imp
 ### Track Your Learning Journey
 
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="https://github.com/user-attachments/assets/9c9e58c8-9556-4cfe-a0ca-f89b3a5d86fb" alt="Progress Dashboard" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <img src="https://github.com/user-attachments/assets/2a2f7c9e-c81c-478a-9ac4-2c52d5532352" alt="Progress Dashboard" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Interactive Dashboard with Analytics</p>
 </div>
 
 Visualize your coding progress with comprehensive analytics and insights.
