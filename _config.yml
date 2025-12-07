@@ -1,0 +1,45 @@
+# Jekyll Configuration for Rookie Route
+
+title: Rookie Route
+description: An open-source platform guiding new developers through their career paths
+baseurl: ""
+url: "https://rookie-route.github.io"
+
+# Theme
+theme: jekyll-theme-cayman
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+  - jekyll-remote-theme
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Features
+    url: /features
+  - title: Community
+    url: /community
+  - title: Contact
+    url: /contact
+
+# External Links
+github_url: https://github.com/rookie-route/rookie-route-repository
+docs_url: https://rookie-route-repository.readthedocs.io
+discord_url: https://discord.gg/qzEBPv6bAV
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude from processing
+exclude:
+  - app/
+  - docs/
+  - node_modules/
+  - vendor/
+  - .gitignore
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - requirements.txt
+  - run_server.bat

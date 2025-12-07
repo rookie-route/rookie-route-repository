@@ -43,3 +43,9 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Jekyll
+_site/
+.jekyll-cache/
+.sass-cache/
+Gemfile.lock
