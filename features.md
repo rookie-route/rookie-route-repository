@@ -81,7 +81,7 @@ Small, manageable tasks that allow Rookies to contribute to real projects and bu
 ### Instant Feedback on Your Code
 
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="https://github.com/user-attachments/assets/f44ac8a4-52cf-47b4-bb65-9e6fc782ed10" alt="AI Code Analysis" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <img src="{{ site.baseurl }}/assets/images/analyze.png" alt="AI Code Analysis - Rookie Route" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 </div>
 
 Leveraging OpenAI's advanced models to provide personalized code reviews and improvement suggestions.
@@ -112,7 +112,7 @@ Leveraging OpenAI's advanced models to provide personalized code reviews and imp
 ### Track Your Learning Journey
 
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="https://github.com/user-attachments/assets/9c9e58c8-9556-4cfe-a0ca-f89b3a5d86fb" alt="Progress Dashboard" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <img src="{{ site.baseurl }}/assets/images/main.png" alt="Progress Dashboard - Rookie Route" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 </div>
 
 Visualize your coding progress with comprehensive analytics and insights.
