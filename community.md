@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Community
+permalink: /community/
 ---
 
 # Join the Rookie Route Community
