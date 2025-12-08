@@ -1,4 +1,6 @@
-<img width="1824" height="820" alt="image" src="https://github.com/user-attachments/assets/9bd78f48-4362-43cf-9043-88599baa8730" />## 1. Vision and Mission
+![Rookie Route Main Screen](images/main.png)
+
+## 1. Vision and Mission
 
 * **Project Name**: Rookie Route
 * **Mission**: To build an open-source, community-driven platform that guides new developers(Rookies) through their career paths and accelerates their professional growth.
