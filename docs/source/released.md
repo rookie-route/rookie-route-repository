@@ -5,12 +5,6 @@
 We are excited to announce the launch of v1.0.0! This release focuses heavily on improving developer experience (DX) by streamlining the local setup process and enhancing data handling stability across the board.
 
 
-## New Features
-### C Language Compiler Dependency Support
-Added automatic detection and inclusion of necessary C language compiler dependencies to support a wider range of development environments. This enhancement simplifies building and running the project across various operating systems and development setups.
-* Related Commit: feat: add-c-language-support (#41)
-
-
 ## Improvements
 ### Simplified and Standardized Local Environment Setup
 
@@ -37,4 +31,12 @@ Improved the stability of the existing visualization module and refined its pres
 Data Error Segmentation: Previously, issues were often generically reported as 'data errors.' We have now segmented these into specific error types, allowing for faster and more accurate identification of the root cause of data anomalies.
 * Related Commit: feat: Add language-specific analysis and robust error handling (#39)
 * Related Commit: feat: Implement granular error categorization and enhanced visualization (#40)
+
+
+
+## New Features
+### C Language Compiler Dependency Support
+Added automatic detection and inclusion of necessary C language compiler dependencies to support a wider range of development environments. This enhancement simplifies building and running the project across various operating systems and development setups.
+* Related Commit: feat: add-c-language-support (#41)
+
 
