@@ -60,32 +60,46 @@ Join our active chat communities for instant help and collaboration.
 
 <div style="background: #f6f8fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;" markdown="1">
 
-### Stay Informed
+### Stay Informed via GitHub Notifications
 
-Subscribe to our mailing lists for updates, announcements, and community news.
+Subscribe to email updates using GitHub's Watch feature - get notifications delivered directly to your inbox!
 
-**Available Lists:**
+**How to Subscribe:**
 
-📬 **Announcements**
+1. Visit our [GitHub Repository]({{ site.github_url }})
+2. Click the **"Watch"** button at the top right
+3. Select **"Custom"** from the dropdown
+4. Choose your notification preferences:
+
+**Available Notification Types:**
+
+📬 **Announcements & Releases**
+- ✅ Check **"Releases"** - Get notified of new versions
 - New feature releases
 - Major updates and changes
-- Community events and webinars
+- Version release notes
 
-> *[To be completed: Add mailing list signup link]*
+<a href="{{ site.github_url }}" style="display: inline-block; margin-top: 0.5rem; padding: 0.4rem 1rem; background: #28a745; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">Subscribe to Releases →</a>
 
-📬 **Developer Updates**
-- Technical discussions
+📬 **Developer Updates & Discussions**
+- ✅ Check **"Discussions"** - Stay updated on technical talks
+- Technical discussions and Q&A
 - API changes and deprecations
 - Contribution opportunities
+- Community conversations
 
-> *[To be completed: Add mailing list signup link]*
+<a href="{{ site.github_url }}/discussions" style="display: inline-block; margin-top: 0.5rem; padding: 0.4rem 1rem; background: #0366d6; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">Follow Discussions →</a>
 
-📬 **Newsletter**
-- Monthly community highlights
-- Featured projects and contributors
-- Learning resources and tips
+📬 **All Activity**
+- ✅ Check **"Issues"** and **"Pull requests"** for development updates
+- Real-time project updates
+- Bug reports and fixes
+- Feature development progress
 
-> *[To be completed: Add newsletter signup form]*
+**Manage Your Subscription:**
+- Adjust notification settings anytime in your [GitHub notification settings](https://github.com/settings/notifications)
+- Choose email frequency: real-time, daily digest, or weekly digest
+- Unsubscribe anytime by clicking "Unwatch"
 
 </div>
 

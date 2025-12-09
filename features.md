@@ -23,7 +23,6 @@ Our roadmaps are designed by experienced senior developers who understand what i
 - 🔄 **Regularly updated** - Stay current with industry trends and best practices
 - 🌐 **Multiple tech stacks** - Choose paths for web, mobile, backend, AI, and more
 
-> *[To be completed: Add specific roadmap examples and screenshots]*
 
 </div>
 
@@ -43,7 +42,6 @@ A dedicated space where Rookies can find mentors who genuinely care about helpin
 - 🎓 **Knowledge Sharing** - Learn from real-world experiences
 - 🌟 **Community Support** - Group discussions and peer learning
 
-> *[To be completed: Add mentorship program details and how to join]*
 
 </div>
 
@@ -69,7 +67,6 @@ Small, manageable tasks that allow Rookies to contribute to real projects and bu
 - Feature implementations
 - Testing and quality assurance
 
-> *[To be completed: Add current projects and contribution guidelines]*
 
 </div>
 
@@ -100,7 +97,6 @@ Leveraging OpenAI's advanced models to provide personalized code reviews and imp
 - Detailed explanations for each suggestion
 - Dashboard with statistics and trends
 
-> *[To be completed: Add demo video or interactive examples]*
 
 </div>
 
@@ -111,10 +107,6 @@ Leveraging OpenAI's advanced models to provide personalized code reviews and imp
 <div style="background: #f6f8fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;" markdown="1">
 
 ### Track Your Learning Journey
-
-<div style="text-align: center; margin: 1rem 0;">
-  <img src="{{ site.baseurl }}/assets/images/main.png" alt="Progress Dashboard - Rookie Route" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-</div>
 
 <div style="text-align: center; margin: 1rem 0;">
   <img src="{{ site.baseurl }}/assets/images/analyze2.png" alt="Error Type Visualization - Charts and Statistics" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
@@ -128,7 +120,7 @@ Visualize your coding progress with comprehensive analytics and insights.
 - 🏆 **Achievement System** - Celebrate your milestones
 - 📅 **Submission History** - Review past code analyses
 
-> *[To be completed: Add dashboard screenshots and metrics details]*
+
 
 </div>
 
