@@ -1,3 +1,4 @@
+## Preview of Rookie Route
 ![Rookie Route Main Screen](images/main.png)
 
 ## 1. Vision and Mission
