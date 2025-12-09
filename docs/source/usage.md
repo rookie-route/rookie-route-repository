@@ -1,5 +1,7 @@
 # How to Use Rookie Route
 
+Rookie Route is an AI-powered code analysis and learning tool that helps you improve your coding skills. Follow the guide below to utilize its key features.
+
 ## AI-Powered Code Analysis
 
 Rookie Route provides AI-powered code analysis to help you improve your coding skills.
@@ -41,3 +43,5 @@ The main dashboard gives you an overview of:
 - Progress statistics
 - Learning recommendations
 - Community updates
+
+Next Step: Head over to the Code Analysis page now to analyze your first code and receive feedback!
