@@ -13,15 +13,18 @@ Added automatic detection and inclusion of necessary C language compiler depende
 
 ## Improvements
 ### Simplified and Standardized Local Environment Setup
-#### Local Setup Normalization: 
-
-Resolved local configuration and path issues to ensure the project runs instantly across different developers' local environments. You can now clone the project and run it immediately without complex setup procedures.
-* Related Commit: fix: frontend setting and remove local settings (#34)
 
 #### Per-User MySQL Integration Support: 
 
 Improved the configuration structure to allow individual users to independently connect the database based on their local MySQL environment. This significantly simplifies collaboration and parallel development efforts.
 * Related Commit: feat: Update backend with MySQL integration and CORS (#26)
+
+  
+#### Local Setup Normalization: 
+
+Resolved local configuration and path issues to ensure the project runs instantly across different developers' local environments. You can now clone the project and run it immediately without complex setup procedures.
+* Related Commit: fix: frontend setting and remove local settings (#34)
+
 
 #### Data Visualization Module Enhancement: 
 
@@ -32,5 +35,6 @@ Improved the stability of the existing visualization module and refined its pres
 ## Bug Fixes
 ### Granular Data Error Scope
 Data Error Segmentation: Previously, issues were often generically reported as 'data errors.' We have now segmented these into specific error types, allowing for faster and more accurate identification of the root cause of data anomalies.
-* Related Commit: feat: Implement granular error categorization and enhanced visualization (#40)
 * Related Commit: feat: Add language-specific analysis and robust error handling (#39)
+* Related Commit: feat: Implement granular error categorization and enhanced visualization (#40)
+
