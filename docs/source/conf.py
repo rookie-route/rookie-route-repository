@@ -23,6 +23,7 @@ extensions = [
     'sphinx.ext.autodoc',       # 코드에서 문서 자동 추출   
     'sphinx.ext.viewcode',      # 소스 코드 링크
     'sphinx.ext.napoleon',      # Google/Numpy 스타일 docstring 지원
+    'sphinxcontrib.mermaid',    #mermaid 지원
 ]
 
 source_suffix = {
@@ -32,6 +33,11 @@ source_suffix = {
 
 templates_path = ['_templates']
 exclude_patterns = []
+
+# Mermaid가 마크다운 코드 블록(```mermaid)을 인식하도록 설정
+myst_enable_extensions = [
+    "colon_fence",
+]
 
 
 
