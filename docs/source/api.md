@@ -26,7 +26,7 @@ To access protected endpoints, you must authorize first.
 2. Enter your credentials in the login form.
 
 <p align="left">
-  <img src="../../assets/images/authorize_button.png" width="200" alt="Authorize Button">
+  <img src="images/authorize_button.png" width="200" alt="Authorize Button">
 </p>
 
 
