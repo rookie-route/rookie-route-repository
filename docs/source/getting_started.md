@@ -2,7 +2,6 @@
 
 Welcome to Rookie Route! This guide will help you get started with the platform.
 
-![Rookie Route Dashboard](images/main.png)
 
 ## Installation
 
