@@ -9,7 +9,8 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="RookieRoute",
-    description="OpenAI와 FastAPI, MySQL을 활용한 코드 리뷰 및 약점 분석 프로젝트"
+    description="OpenAI와 FastAPI, MySQL을 활용한 코드 리뷰 및 약점 분석 프로젝트",
+    version="1.0.0"
 )
 
 # CORS 설정 - 프론트엔드와 통신 허용
