@@ -1,4 +1,4 @@
-# Technical Overview
+# 🛠️ Technical Overview
 
 This document provides a comprehensive technical overview of the **RookieRoute** backend system, detailing the monorepo structure, database schema, security implementation, and core logic flow.
 

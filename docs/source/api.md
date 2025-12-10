@@ -1,4 +1,4 @@
-# RookieRoute API Reference
+# 🚀 RookieRoute API Reference
 
 **RookieRoute** is a comprehensive backend service powered by **FastAPI**, **MySQL**, and **OpenAI**. It provides automated code reviews, vulnerability analysis, and user statistics dashboards.
 
