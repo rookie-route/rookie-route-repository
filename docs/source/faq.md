@@ -1,9 +1,9 @@
-# FAQ
+# ❓ FAQ
 
 This document provides answers to frequently asked questions about the Rookie Route project.
 
 
-## 1. General Questions
+## 🌐 General Questions
 
 #### Q1: What is the ultimate goal of Rookie Route?
 
@@ -17,7 +17,7 @@ A2: Currently, it is operated as a non-profit open-source project, and all code 
 
 
 
-## 2. Usage and Setup
+## ⚙️ Usage and Setup
 
 #### Q1: What environment is required to run the project locally?
 
@@ -39,7 +39,7 @@ A3: If you navigate to `http://localhost:8000/docs`, and the following welcome m
 
 
 
-## 3. Contribution and Community
+## 🤝 Contribution and Community
 
 #### Q1: I found a bug. How should I report it?
 
@@ -54,3 +54,4 @@ A2: Yes, of course! You can contribute in various ways, such as documentation im
 #### Q3: Where is the real-time communication channel?
 
 A3: The Discord channel link is: https://discord.com/invite/qzEBPv6bAV
+
