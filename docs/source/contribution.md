@@ -1,3 +1,4 @@
 # Contribution Guidelines
 
-{include} ../../CONTRIBUTING.md
+```{include} ../../CONTRIBUTING.md
+```
