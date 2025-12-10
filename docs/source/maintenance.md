@@ -1,8 +1,8 @@
-# Maintenance and Troubleshooting
+# ⚙️ Maintenance and Troubleshooting
 
 This section provides procedures for routine maintenance, identifying common issues, and outlining steps for their resolution.
 
-## Routine Maintenance
+## 📅 Routine Maintenance
 ### 1. Dependencies Update
 Periodically keeping packages up-to-date is recommended for project stability and security.
 
@@ -28,7 +28,7 @@ mysqldump -u [username] -p [database_name] > backup_file.sql
 ### 3. Environment Variable Check
 It is recommended for security reasons to periodically re-issue or verify the SECRET_KEY and OpenAI API Key set in the .env file.
 
-## Common Issues and Solutions
+## 🔍 Common Issues and Solutions
 ### Backend Execution
 Symptom: `ModuleNotFoundError`
 
