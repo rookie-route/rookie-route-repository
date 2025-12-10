@@ -1,9 +1,9 @@
-# Getting Started
+# 🚀Getting Started
 
 Welcome to Rookie Route! This guide will help you get started with the platform.
 
 
-## Installation
+## 🛠️Installation
 
 ### Prerequisites
 
@@ -43,7 +43,7 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-## Next Steps
+## ➡️Next Steps
 
 - Check out the [Usage Guide](usage.md) to learn how to use the platform
 - Read about our [Features](about.md)
