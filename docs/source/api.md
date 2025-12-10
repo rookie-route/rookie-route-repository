@@ -25,10 +25,6 @@ To access protected endpoints, you must authorize first.
 1. Click the **Authorize** button (Lock icon) at the **top right** of the page.
 2. Enter your credentials in the login form.
 
-<p align="left">
-  <img src="images/authorize_button.png" width="200" alt="Authorize Button">
-</p>
-
 
 ### `POST` /auth/signup
 **Register a new user.**
