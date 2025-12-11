@@ -6,17 +6,15 @@ baseurl: "/rookie-route-repository"
 url: "https://rookie-route.github.io"
 
 # Theme
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman  # Commented out - using remote_theme instead
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-remote-theme
-  - jekyll-polyglot
+  - jekyll-multiple-languages-plugin
 
-# Polyglot i18n settings
+# Multiple Languages settings
 languages: ["en", "ko"]
-default_lang: "en"
-exclude_from_localization: ["assets", "css", "js"]
-parallel_localization: true
+exclude_from_localizations: ["assets", "css", "js"]
 
 # Navigation
 navigation:
@@ -50,3 +48,5 @@ exclude:
   - LICENSE
   - requirements.txt
   - run_server.bat
+  - _site/
+  - .jekyll-cache/

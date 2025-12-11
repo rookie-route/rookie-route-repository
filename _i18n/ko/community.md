@@ -1,9 +1,3 @@
----
-layout: default
-title: Community
-permalink: /community/
----
-
 # Rookie Route 커뮤니티에 참여하세요
 
 우리는 **협업을 통한 성장**을 믿습니다. 우리 커뮤니티는 모든 수준의 개발자들이 함께 배우고, 공유하고, 성장할 수 있는 환영하는 공간입니다.
