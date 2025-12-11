@@ -1,9 +1,3 @@
----
-layout: default
-title: Contact
-permalink: /contact/
----
-
 # Contact Us
 
 We'd love to hear from you! Whether you have questions, suggestions, or just want to say hello, there are several ways to reach us.

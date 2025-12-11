@@ -1,9 +1,3 @@
----
-layout: default
-title: Community
-permalink: /community/
----
-
 # Join the Rookie Route Community
 
 We believe in **growth through collaboration**. Our community is a welcoming space for developers of all skill levels to learn, share, and grow together.

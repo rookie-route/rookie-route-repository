@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.active_lang }}">
+<html lang="{{ site.lang }}">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,18 +23,36 @@
         <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
       {% endif %}
 
+      <!-- Navigation Menu -->
+      <nav style="margin-top: 1rem;">
+        {% for item in site.navigation %}
+          <a href="{{ site.baseurl }}{{ item.url }}"
+             class="btn"
+             style="margin: 0.25rem;">
+            {{ item.title }}
+          </a>
+        {% endfor %}
+      </nav>
+
       <!-- Language Switcher -->
       <div class="language-switcher" style="margin-top: 1rem;">
         {% for lang in site.languages %}
-          {% if lang == site.active_lang %}
-            <span style="display: inline-block; padding: 0.5rem 1rem; background: rgba(255,255,255,0.3); color: white; border-radius: 4px; margin: 0 0.25rem; font-weight: bold;">
+          {% if lang == site.lang %}
+            <span style="display: inline-block; padding: 0.5rem 1rem; background: rgba(255,255,255,0.3); color: white; border-radius: 4px; margin: 0 0.25rem; font-weight: bold; cursor: not-allowed;">
               {% if lang == 'en' %}English{% elsif lang == 'ko' %}한국어{% endif %}
             </span>
           {% else %}
-            <a href="{% if lang == site.default_lang %}{{ page.url }}{% else %}/{{ lang }}{{ page.url }}{% endif %}"
-               style="display: inline-block; padding: 0.5rem 1rem; background: rgba(255,255,255,0.1); color: white; text-decoration: none; border-radius: 4px; margin: 0 0.25rem; border: 1px solid rgba(255,255,255,0.3);">
-              {% if lang == 'en' %}English{% elsif lang == 'ko' %}한국어{% endif %}
-            </a>
+            {% if lang == site.languages[0] %}
+              <a href="/rookie-route-repository{{ page.url }}"
+                 style="display: inline-block; padding: 0.5rem 1rem; background: rgba(255,255,255,0.1); color: white; text-decoration: none; border-radius: 4px; margin: 0 0.25rem; border: 1px solid rgba(255,255,255,0.3); cursor: pointer;">
+                {% if lang == 'en' %}English{% elsif lang == 'ko' %}한국어{% endif %}
+              </a>
+            {% else %}
+              <a href="/rookie-route-repository/{{ lang }}{{ page.url }}"
+                 style="display: inline-block; padding: 0.5rem 1rem; background: rgba(255,255,255,0.1); color: white; text-decoration: none; border-radius: 4px; margin: 0 0.25rem; border: 1px solid rgba(255,255,255,0.3); cursor: pointer;">
+                {% if lang == 'en' %}English{% elsif lang == 'ko' %}한국어{% endif %}
+              </a>
+            {% endif %}
           {% endif %}
         {% endfor %}
       </div>
