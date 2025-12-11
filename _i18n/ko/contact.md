@@ -1,8 +1,3 @@
----
-layout: default
-title: Contact
-permalink: /contact/
----
 
 # 문의하기
 
