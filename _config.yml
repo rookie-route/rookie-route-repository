@@ -10,6 +10,13 @@ theme: jekyll-theme-cayman
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-remote-theme
+  - jekyll-polyglot
+
+# Polyglot i18n settings
+languages: ["en", "ko"]
+default_lang: "en"
+exclude_from_localization: ["assets", "css", "js"]
+parallel_localization: true
 
 # Navigation
 navigation:
