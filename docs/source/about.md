@@ -1,4 +1,4 @@
-# About Rookie Route
+# 💭 About Rookie Route
 
 ## ✨ Preview of Rookie Route
 ![Rookie Route Main Screen](images/main.png)
