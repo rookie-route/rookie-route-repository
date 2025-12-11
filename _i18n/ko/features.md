@@ -73,7 +73,7 @@
 ### 코드에 대한 즉각적인 피드백
 
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="../assets/images/analyze1.png" alt="AI Code Analysis - Error Pattern Analysis" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <img src="/rookie-route-repository/assets/images/analyze1.png" alt="AI Code Analysis - Error Pattern Analysis" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
 
 
@@ -106,7 +106,7 @@ OpenAI의 고급 모델을 활용하여 개인화된 코드 리뷰와 개선 제
 ### 학습 여정 추적
 
 <div style="text-align: center; margin: 1rem 0;">
-  <img src="../assets/images/analyze2.png" alt="Error Type Visualization - Charts and Statistics" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <img src="/rookie-route-repository/assets/images/analyze2.png" alt="Error Type Visualization - Charts and Statistics" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
 
 </div>
