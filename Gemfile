@@ -2,9 +2,18 @@
 
 source "https://rubygems.org"
 
-gem "github-pages", group: :jekyll_plugins
+# Use jekyll directly instead of github-pages to allow custom plugins
+gem "jekyll", "~> 4.3"
 gem "jekyll-remote-theme"
-gem "jekyll-polyglot"
+gem "jekyll-multiple-languages-plugin"
+gem "jekyll-seo-tag"
+gem "webrick"  # Required for Jekyll 4.x on Ruby 3.x
+
+# Additional gems required by GitHub Pages theme
+gem "github-pages-health-check"
+
+# Ruby 3.4+ compatibility
+gem "bigdecimal"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
