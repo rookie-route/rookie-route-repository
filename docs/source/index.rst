@@ -27,7 +27,7 @@ Welcome to RookieRoute's documentation!
    maintenance
    contribution
    faq
-   releases
+   released
 
 Indices and tables
 ==================
