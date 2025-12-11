@@ -1,6 +1,6 @@
 # 📝 Release Notes
 
-## 🎉 v1.0.0: Official Release (2025-12-09)
+## 🎉 v1.0.0: Official Release (2025-12-11)
 **Final Stability Patch**
 The official production release. We focused purely on resolving critical rendering issues discovered in the v0.9.0 pre-release to ensure a seamless experience.
 
