@@ -1,28 +1,35 @@
 # 📝 Release Notes
 
-## 🎉 v1.0.0: Official Release (2025-12-11)
+## 🎉 v1.0.0: Official Release (2025-12-09)
+**Final Stability Patch**
+The official production release. We focused purely on resolving critical rendering issues discovered in the v0.9.0 pre-release to ensure a seamless experience.
 
-**Stable Release, Asset Management & Documentation Overhaul**
+### 🚀 Final Polish & Bug Fixes
+* **Web Stability:** Fixed critical Jekyll rendering errors and image path issues ensuring the landing page loads correctly.
+    * *Related: PR #91 (Fix Image Error)*
+    * *Related: PR #90 (Fix Image URL)*
+    * *Related: PR #87, #88 (Fix Jekyll Connection & Errors)*
 
-We are excited to announce the official launch of **v1.0.0**! This release marks the culmination of all previous developments, featuring a completely revamped documentation structure for a better user onboarding experience.
+---
 
-### 🚀 Final Polish & Documentation
+## 🌏 v0.9.0: Global Expansion & Overhaul
+**Multilingual Support, Documentation Restructure & Asset Optimization**
+A massive pre-release update introducing global language support, a completely overhauled documentation structure, and optimized assets.
 
-- **Comprehensive Documentation Overhaul:** Refined the README structure, updated system architecture details, and polished all guide documents with consistent formatting and emojis.
-    - *Related: PR #83 (Overhaul README & Project Structure)*
-    - *Related: PR #81 (Refine Setup Guide & Formatting)*
-    - *Related: PR #80 (Add Emoticons to Documentation Titles)*
+### ✨ New Features
+* **Multilingual Support (Global Reach):** Integrated `jekyll-polyglot` to support both English and Korean languages.
+    * *Related: PR #85, #86 (Add Jekyll Polyglot & Support)*
 
-- **Simplified Installation Process:** Restructured the setup guide and introduced `run_server.bat` for a one-click execution experience on Windows.
-    - *Related: PR #81 (Refine Setup Guide)*
+### 📝 Documentation Overhaul
+* **Comprehensive README Rewrite:** Refined the System Architecture details and project structure breakdowns.
+    * *Related: PR #83 (Overhaul README)*
+* **Simplified Setup Guide:** Separated installation/running steps and introduced `run_server.bat`.
+    * *Related: PR #81 (Refine Setup Guide)*
 
-- **Documentation Asset Management:** Reorganized documentation image assets to ensure compatibility with ReadTheDocs and streamline project structure.
-    - *Related: PR #76 (Remove Authorize Button & Simplify Assets)*
-    - *Related: PR #71 (Fix Broken Images on RTD)*
-
-### ✨ Full Stability
-
-- Verified all features including MySQL integration, C language support, and documentation systems.
+### 🏗️ Asset Management
+* **Documentation Asset Optimization:** Removed redundant assets (e.g., authorize button) to streamline the repository structure.
+    * *Related: PR #76 (Remove Authorize Button & Simplify Assets)*
+    * *Related: PR #71 (Fix Broken Images)*
 
 ---
 
