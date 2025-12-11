@@ -1,3 +1,9 @@
+---
+layout: default
+title: Community
+permalink: /community/
+---
+
 # Join the Rookie Route Community
 
 We believe in **growth through collaboration**. Our community is a welcoming space for developers of all skill levels to learn, share, and grow together.
@@ -20,7 +26,6 @@ Engage with fellow developers and mentors through our various discussion platfor
 
 <a href="{{ site.github_url }}/discussions" style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1.5rem; background: #24292e; color: white; text-decoration: none; border-radius: 4px;">Visit GitHub Discussions →</a>
 
-> *[To be completed: Add link to specific discussion forum when created]*
 
 </div>
 
@@ -44,7 +49,6 @@ Join our active chat communities for instant help and collaboration.
 
 <a href="{{ site.discord_url }}" style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1.5rem; background: #5865F2; color: white; text-decoration: none; border-radius: 4px;">Join Discord Server →</a>
 
-> *[To be completed: Add Slack/Gitter/other chat platform links if applicable]*
 
 </div>
 
@@ -168,39 +172,6 @@ Read our full [Code of Conduct]({{ site.github_url }}/blob/main/CODE_OF_CONDUCT.
 
 ---
 
-## 🎯 Community Events
-
-<div style="background: #f6f8fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;" markdown="1">
-
-### Join Our Events
-
-> *[To be completed: Add upcoming community events, webinars, hackathons, etc.]*
-
-**Upcoming:**
-- Monthly community calls
-- Code review sessions
-- Learning workshops
-- Hackathons and challenges
-
-Stay tuned to our Discord and mailing list for announcements!
-
-</div>
-
----
-
-## 👥 Meet the Team
-
-<div style="background: #f6f8fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;" markdown="1">
-
-### Core Contributors
-
-> *[To be completed: Add team member profiles and photos]*
-
-We're always looking for passionate contributors to join our core team!
-
-</div>
-
----
 
 <div style="text-align: center; margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, #159957 0%, #155799 100%); border-radius: 12px; color: white;">
   <h2 style="color: white; margin-top: 0;">Ready to Join Our Community?</h2>

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+---
+
 # Contact Us
 
 We'd love to hear from you! Whether you have questions, suggestions, or just want to say hello, there are several ways to reach us.
@@ -35,17 +41,15 @@ We'd love to hear from you! Whether you have questions, suggestions, or just wan
 
 <div style="background: #f6f8fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;" markdown="1">
 
-> *[To be completed: Add official email contact information]*
-
 **For General Inquiries:**
-- Email: [To be added]
+- Email: [yeawon77@naver.com]
 
 **For Security Issues:**
-- Email: [To be added]
+- Email: [dbfl040926@naver.com]
 - Please report security vulnerabilities privately
 
 **For Partnership Opportunities:**
-- Email: [To be added]
+- Email: [sindayeon123@gmail.com]
 
 </div>
 
@@ -102,23 +106,6 @@ Interested in contributing to Rookie Route?
 - Join our [Discord]({{ site.discord_url }}) to connect with other contributors
 
 <a href="{{ site.github_url }}/blob/main/CONTRIBUTING.md" style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1.5rem; background: #159957; color: white; text-decoration: none; border-radius: 4px;">View Contributing Guide</a>
-
-</div>
-
----
-
-## 🌐 Social Media
-
-<div style="background: #f6f8fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;" markdown="1">
-
-Follow us for updates and news!
-
-> *[To be completed: Add social media links when available]*
-
-- **Twitter/X**: [To be added]
-- **LinkedIn**: [To be added]
-- **Dev.to**: [To be added]
-- **Medium**: [To be added]
 
 </div>
 

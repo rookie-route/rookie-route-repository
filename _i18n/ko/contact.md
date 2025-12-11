@@ -1,3 +1,9 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+---
+
 # 문의하기
 
 여러분의 의견을 듣고 싶습니다! 질문, 제안 또는 단순히 인사하고 싶으시다면, 여러 가지 방법으로 연락하실 수 있습니다.
@@ -35,17 +41,15 @@
 
 <div style="background: #f6f8fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;" markdown="1">
 
-> *[완성 예정: 공식 이메일 연락처 정보 추가]*
-
 **일반 문의:**
-- 이메일: [추가 예정]
+- 이메일: [yeawon77@naver.com]
 
 **보안 이슈:**
-- 이메일: [추가 예정]
+- 이메일: [dbfl040926@naver.com]
 - 보안 취약점은 비공개로 신고해 주세요
 
 **파트너십 기회:**
-- 이메일: [추가 예정]
+- 이메일: [sindayeon123@gmail.com]
 
 </div>
 
@@ -102,23 +106,6 @@ Rookie Route에 기여하는 데 관심이 있으신가요?
 - 다른 기여자들과 연결하기 위해 [Discord]({{ site.discord_url }}) 참여
 
 <a href="{{ site.github_url }}/blob/main/CONTRIBUTING.md" style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1.5rem; background: #159957; color: white; text-decoration: none; border-radius: 4px;">기여 가이드 보기</a>
-
-</div>
-
----
-
-## 🌐 소셜 미디어
-
-<div style="background: #f6f8fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;" markdown="1">
-
-업데이트와 뉴스를 위해 팔로우하세요!
-
-> *[완성 예정: 사용 가능할 때 소셜 미디어 링크 추가]*
-
-- **Twitter/X**: [추가 예정]
-- **LinkedIn**: [추가 예정]
-- **Dev.to**: [추가 예정]
-- **Medium**: [추가 예정]
 
 </div>
 

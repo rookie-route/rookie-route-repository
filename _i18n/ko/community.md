@@ -1,3 +1,9 @@
+---
+layout: default
+title: Community
+permalink: /community/
+---
+
 # Rookie Route 커뮤니티에 참여하세요
 
 우리는 **협업을 통한 성장**을 믿습니다. 우리 커뮤니티는 모든 수준의 개발자들이 함께 배우고, 공유하고, 성장할 수 있는 환영하는 공간입니다.
@@ -20,7 +26,6 @@
 
 <a href="{{ site.github_url }}/discussions" style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1.5rem; background: #24292e; color: white; text-decoration: none; border-radius: 4px;">GitHub Discussions 방문 →</a>
 
-> *[완성 예정: 포럼 생성 시 특정 토론 포럼 링크 추가]*
 
 </div>
 
@@ -44,7 +49,6 @@
 
 <a href="{{ site.discord_url }}" style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1.5rem; background: #5865F2; color: white; text-decoration: none; border-radius: 4px;">Discord 서버 참여 →</a>
 
-> *[완성 예정: 해당되는 경우 Slack/Gitter/기타 채팅 플랫폼 링크 추가]*
 
 </div>
 
@@ -168,39 +172,6 @@ GitHub의 Watch 기능을 사용하여 이메일 업데이트 구독 - 알림을
 
 ---
 
-## 🎯 커뮤니티 이벤트
-
-<div style="background: #f6f8fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;" markdown="1">
-
-### 이벤트 참여
-
-> *[완성 예정: 예정된 커뮤니티 이벤트, 웨비나, 해커톤 등 추가]*
-
-**예정:**
-- 월간 커뮤니티 콜
-- 코드 리뷰 세션
-- 학습 워크샵
-- 해커톤 및 챌린지
-
-Discord와 메일링 리스트에서 공지를 확인하세요!
-
-</div>
-
----
-
-## 👥 팀 만나기
-
-<div style="background: #f6f8fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;" markdown="1">
-
-### 핵심 기여자
-
-> *[완성 예정: 팀 멤버 프로필 및 사진 추가]*
-
-우리는 항상 열정적인 기여자들이 핵심 팀에 합류하기를 기다립니다!
-
-</div>
-
----
 
 <div style="text-align: center; margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, #159957 0%, #155799 100%); border-radius: 12px; color: white;">
   <h2 style="color: white; margin-top: 0;">커뮤니티에 참여할 준비가 되셨나요?</h2>
